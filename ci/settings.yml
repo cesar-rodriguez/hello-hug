@@ -1,0 +1,29 @@
+# Debug Mode will output all info in CI scripts to Concourse
+debug-mode: true
+
+# GitHub Config
+github-uri: git@github.com:cesar-rodriguez/hello-hug.git
+github-branch: master
+github-org: cesar-rodriguez
+github-repo: hello-hug
+# github-personal-access-token: SHOULD BE STORED IN VAULT
+# github-private-key: SHOULD BE STORED IN VAULT
+
+# Vault Config
+vault-stage-sts-path: aws/therasec-stage/sts/ec2admin
+vault-prod-sts-path: aws/therasec-prod/sts/ec2admin
+vault-aws-role-name: ec2admin
+# vault-address: SHOULD BE STORED IN VAULT
+# vault-role-id: SHOULD BE STORED IN VAULT
+# vault-secret-id: SHOULD BE STORED IN VAULT
+
+# Email Config
+smtp-host: email-smtp.us-east-1.amazonaws.com
+smtp-port: "587"
+# smtp-username: SHOULD BE STORED IN VAULT
+# smtp-password: SHOULD BE STORED IN VAULT
+# email-from: SHOULD BE STORED IN VAULT
+
+# S3 Bucket Config
+s3-bucket-name: terraform-pipeline-rc
+s3-bucket-profile: therasec-prod
