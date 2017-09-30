@@ -5,8 +5,8 @@ resource_types:
   - name: vault
     type: docker-image
     source:
-      repository: docurated/concourse-vault-resource
-      tag: latest
+      repository: therasec/concourse-vault-resource
+      tag: test
 
   # Interacts with GitHub pull requests: https://github.com/jtarchie/github-pullrequest-resource
   - name: pull-request
@@ -29,8 +29,7 @@ resources:
     source:
       url: ((vault-address))
       auth_method: AppRole
-      role_id: ((vault-role-id))
-      secret_id: ((vault-secret-id))
+      github_personal_access_token: ((github-personal-access-token))
 
   # Interacts with GitHub pull requests
   - name: pull-request
