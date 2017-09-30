@@ -18,7 +18,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "web_sg" {
-  name        = "web"
+  name        = "web-sg"
   description = "Security group for web server"
   vpc_id      = "${var.vpc_id}"
 
