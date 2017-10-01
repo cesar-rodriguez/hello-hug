@@ -1,12 +1,12 @@
 ---
 # Community resources: http://concourse.ci/configuring-resource-types.html
 resource_types:
-  # Fetches secrets custom paths in Vault: https://github.com/Docurated/concourse-vault-resource
+  # Fetches secrets custom paths in Vault: https://github.com/therasec/concourse-vault-resource
   - name: vault
     type: docker-image
     source:
       repository: therasec/concourse-vault-resource
-      tag: test
+      tag: latest
 
   # Interacts with GitHub pull requests: https://github.com/jtarchie/github-pullrequest-resource
   - name: pull-request
@@ -28,7 +28,7 @@ resources:
     type: vault
     source:
       url: ((vault-address))
-      auth_method: AppRole
+      auth_method: github
       github_personal_access_token: ((github-personal-access-token))
 
   # Interacts with GitHub pull requests
